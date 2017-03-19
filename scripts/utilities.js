@@ -1,5 +1,5 @@
-function forEach (array, callback){
+function forEach (array, callBack){
     for (var i = 0; i < array.length; i ++) {
-        callback(array[i]);
+        callBack(array[i]);
     }
 }
