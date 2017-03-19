@@ -29,6 +29,22 @@ var albumMarconi = {
          { title: 'Wrong phone number', duration: '2:15'}
      ]
  };
+// # assignment
+var albumJane = {
+     title: 'The Github',
+     artist: 'Mr Confused',
+     label: 'ULTRA',
+     year: '2017',
+     albumArtUrl: 'assets/images/album_covers/20.png',
+     songs: [
+         { title: 'Hello, HTML?', duration: '1:01' },
+         { title: 'Git, git, git', duration: '5:01' },
+         { title: 'Fits in your brain', duration: '3:21'},
+         { title: 'Can you help me now?', duration: '3:14' },
+         { title: 'Wrong code', duration: '2:15'}
+     ]
+ };
+
 
 var createSongRow = function (songNumber, songName, songLength) {
     var template =
@@ -42,14 +58,15 @@ var createSongRow = function (songNumber, songName, songLength) {
     return template;
 }
 
-var setCurrentAlbum = function (album) {
-    // #1
+ // #1
     var albumTitle = document.getElementsByClassName('album-view-title')[0];
     var albumArtist = document.getElementsByClassName('album-view-artist')[0];
     var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
     var albumImage = document.getElementsByClassName('album-cover-art')[0];
     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
+var setCurrentAlbum = function (album) {
+    
     // #2
     albumTitle.firstChild.nodeValue = album.title;
     albumArtist.firstChild.nodeValue = album.artist;
@@ -67,4 +84,14 @@ var setCurrentAlbum = function (album) {
 
 window.onload = function (){
     setCurrentAlbum(albumPicasso);
-}
+    
+    var album = [albumPicasso, albumMarconi, albumJane];
+    var i = 1;
+    albumImage.addEventListener ("click", function (event){
+        setCurrentAlbum(album[i]);
+        i ++;
+        if (i === album.length) {
+            i = 0;
+        }
+    });
+};
