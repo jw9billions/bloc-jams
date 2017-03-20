@@ -21,9 +21,10 @@ window.onload = function() {
     var scrollDistance = sellingPoints.getBoundingClientRect().top - window.innerHeight + 200;
     
     window.addEventListener('scroll', function(event) {
-        // console.log("Current offset from the top is " + sellingPoints.getBoundingClientRect().top + " pixels"); //
-      if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance) {
-            animatePoints (pointsArray);
-      }
+
+        if (document.documentElement.scrollTop || document.body.scrollTop >= scrollDistance) {
+             animatePoints(pointsArray);  
+        }
     });
+    
  }

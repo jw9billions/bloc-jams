@@ -1,6 +1,6 @@
 //Example Album
 var albumPicasso = {
-    title: 'The Colors?',
+    title: 'The Colors',
     artist: 'Pablo Picasso',
     lable: 'Cubism',
     year: '1881',
@@ -50,7 +50,6 @@ var createSongRow = function (songNumber, songName, songLength) {
     var template =
         '<tr class="album-view-song-item">'
       + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
-
       + '  <td class="song-item-title">' + songName + '</td>'
       + '  <td class="song-item-duration">' + songLength + '</td>'
       + '</tr>'
@@ -67,6 +66,7 @@ var createSongRow = function (songNumber, songName, songLength) {
     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
 var setCurrentAlbum = function (album) {
+
     // #2
     albumTitle.firstChild.nodeValue = album.title;
     albumArtist.firstChild.nodeValue = album.artist;
@@ -105,8 +105,6 @@ window.onload = function (){
          });
      }
     
-    var album = [albumPicasso, albumMarconi, albumJane];
-    var i = 1;
     albumImage.addEventListener ("click", function (event){
         setCurrentAlbum(album[i]);
         i ++;
