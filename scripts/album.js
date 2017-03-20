@@ -1,6 +1,6 @@
 //Example Album
 var albumPicasso = {
-    title: 'The Colors',
+    title: 'The Colors?',
     artist: 'Pablo Picasso',
     lable: 'Cubism',
     year: '1881',
@@ -66,12 +66,11 @@ var createSongRow = function (songNumber, songName, songLength) {
     var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
 var setCurrentAlbum = function (album) {
-    
     // #2
     albumTitle.firstChild.nodeValue = album.title;
     albumArtist.firstChild.nodeValue = album.artist;
     albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
-    albumImage.setAttribute ('scr', album.albumArtUrl);
+    albumImage.setAttribute ('src', album.albumArtUrl);
     
     // #3
     albumSongList.innerHTML = '';
