@@ -90,13 +90,12 @@ var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></
 window.onload = function (){
     setCurrentAlbum(albumPicasso);
     
-    songListContainer.addEventListener('mouseover', function(event){
-        console.log(event.target);
-        
-        if (event.target.parentElement.className === 'album-view-song-item'){
-            event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
-        }
-    });
+    songListContainer.addEventListener('mouseover', function(event) {
+         if (event.target.parentElement.className === 'album-view-song-item') {
+             // Change the content from the number to the play button's HTML
+             event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
+         }
+     });
     
     for (var i = 0; i < songRows.length; i++) {
          songRows[i].addEventListener('mouseleave', function(event) {
